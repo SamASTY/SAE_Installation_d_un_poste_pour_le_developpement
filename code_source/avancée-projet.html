@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avancée du projet</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="icon" type="image/x-icon" href="../img/icon/icone.ico">
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg nav-colors static-colors">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Compte-rendu</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link rounded-pill" aria-current="page" href="index.html">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link rounded-pill" href="questions-système.html">Questions Système</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link rounded-pill active" href="avancée-projet.html">Avancée du projet</a>
+                </li>
+                <li>
+                    <a class="nav-link rounded-pill" href="gantt.html">Diagramme de Gantt</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link rounded-pill" href="vidéo-anglais.html">Vidéos d'anglais</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link rounded-pill" href="compte-rendu.html">Compte-rendu Web</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="text-center fw-bold display-6">Avancée du projet</h1>
+    <ol>
+        <li>
+            <h2 class="fs-6 fw-bold">Création d’une machine virtuelle de type Linux sur VirtualBox, VMWare,
+                Stratus…</h2>
+            <ul>
+                <li>Nous installons l’hyperviseur Oracle VirtualBox sur nos machines.</li>
+                <li>Nous décidons d’utiliser Debian comme distribution Linux, pour le choix de l’ISO, nous prenons arm64
+                    avec l’installation par réseau qui correspond à nos machines :
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/1.1-Installation_VMDebian.jpg"
+                         alt="Installation Debian"
+                         class="img-fluid d-block mx-auto d-block "></li>
+                <li>Pour la SAE nous allons créer une nouvelle machine virtuelle sur nos machines :</li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/1.2-Création_machine.jpg"
+                         alt="Création de la machine virtuelle" class="img-fluid d-block mx-auto"></li>
+                <li>
+                    Pour créer la nouvelle machine, nous allons dans Tools > New. Nous l’appelons SAE1.03, lui donnons
+                    l’image ISO
+                    que nous venons de télécharger, et précisons à la machine que nous voulons crée une machine sous
+                    Linux. Nous
+                    choisissons aussi un nom d’utilisateur et un mot de base, tous en laissant le nom de domaine
+                    préremplie par
+                    VirtualBox.
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/1.3-Création_machine(2).jpg"
+                         alt="Configuration initiale de la machine" class="img-fluid d-block mx-auto"></li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/1.4-Création_machine(3).jpg"
+                         alt="Nom de l'utilisateur et domaine" class="img-fluid d-block mx-auto"></li>
+                <li>
+                    Pour l’allocation de ressource sur la machine physique, nous gardons les réglages par défauts puis
+                    nous validons
+                    la création.
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/1.5-Création_machine(4).jpg"
+                         alt="Allocation des ressources" class="img-fluid d-block mx-auto"></li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/1.6-Création_machine(5).jpg"
+                         alt="Validation de la création" class="img-fluid d-block mx-auto"></li>
+                <li>
+                    Avant que la machine se lance, nous passons par les paramètres : Settings > Expert > Network et nous
+                    modifions la
+                    mise en réseau. La machine est paramétrée en premier lieu en NAT donc séparée du réseau domestique,
+                    et nous la
+                    passons en Bridged Adapter (Mode Pont) pour créer une nouvelle machine sur le réseau.
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/1.7-Paramètrage.jpg" alt="Paramétrage réseau"
+                         class="img-fluid d-block mx-auto"></li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="fs-6 fw-bold">Création et utilisation d'une Machine Virtuelle</h2>
+            <ul>
+                <li>La machine se lance, et comme j’ai déjà donner le fichier ISO à ma machine, le système
+                    d’exploitation s’installe.
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/2.1-Exécution.jpg"
+                         alt="Execution de la machine virtuelle de VMDebian" class="img-fluid d-block mx-auto"></li>
+                <li>L’installation est faite, je peux rentrer dans ma machine avec une interface visuelle.</li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/2.2-Interface_visuelle.jpg"
+                         alt="interface visuelle de VMDebian" class="img-fluid d-block mx-auto"></li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="fs-6 fw-bold">Configuration d’un serveur SSH</h2>
+            <ul>
+                <li>
+                    Nous avons trouvé l’adresse IP de ma machine avec <span class="fst-italic code">ip a</span>, cette
+                    dernière est
+                    192.168.1.
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/3.1-IP_Machine.jpg" alt="Adresse IP de la machine"
+                         class="img-fluid d-block mx-auto"></li>
+                <li>Ensuite nous avons téléchargé avec <span class="fst-italic code">apt openssh</span> avec la commande
+                    <span class="fst-italic code">sudo apt install openssh-server</span>.
+                    <br>
+                    Puis nous avons vérifié son statut avec <span
+                            class="fst-italic code">sudo systemctl status ssh</span></li>
+                <li>Connexion au serveur via PowerShell avec la commande SSH.</li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/3.2-sudo.jpg" alt="Commandes"
+                         class="img-fluid d-block mx-auto"></li>
+                <li>
+                    Je me connecte avec l’adresse IP de ma machine à son serveur shh par l’intermédiaire de PowerShell
+                    avec la commande
+                    <span class="fst-italic code">ssh sae@192.168.1.65</span>.
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/3.3-ssh.jpg" alt="Commandes"
+                         class="img-fluid d-block mx-auto"></li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="fs-6 fw-bold">Création d’un compte administrateur admin_Gr107_BinomeG1</h2>
+            <ul>
+                <li>
+                    Avec la commande <span class="code fst-italic">su –</span> puis <span class="code fst-italic">usermod -aG sudo sae</span>
+                    nous avons mis l’utilisateur sae dans le groupe super-utilisateur en tant que super utilisateur,
+                    comme le montre la
+                    commande <span class="code fst-italic">groups sae</span> qui affiche les groupes auxquels appartiens
+                    l’utilisateur
+                    sae. Puis nous sortons du mode root (sois super-utilisateur).
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/4.1-sU.jpg" alt="Commandes"
+                         class="img-fluid d-block mx-auto"></li>
+                <li>
+                    Avec la commande <span class="fst-italic code">adduser</span>, nous créons un nouvel utilisateur,
+                    cependant nous
+                    sommes obligées d’utiliser <span class="fst-italic code">–force-badname</span> pour que le nom
+                    demander sois
+                    accepter car il utilisait des caractères spéciaux et des majuscules [<span class="fst-italic code">sudo adduser
+                            --force-badname admin_Gr107_TrinomeG1</span>].
+                    <br>
+                    Ensuite nous avons ensuite ajouté mon nouvel utilisateur au groupe des super utilisateurs [<span
+                        class="fst-italic code">
+                        sudo usermod -aG sudo admin_Gr107_TrinomeG1</span>] comme on peut le voir dans l’affichage de
+                    <span class="fst-italic code">groups admin_Gr107_TrinomeG1</span>.
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/4.2-addUser.jpg" alt="Commandes"
+                         class="img-fluid d-block mx-auto"></li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="fs-6 fw-bold">Création de trois utilisateurs TrinomeG1_1,TrinomeG1_2 et TrinomeG1_3</h2>
+            <ul>
+                <li>Nous avons utilisé les mêmes commandes que précédemment pour créer trois utilisateurs</li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/5.1-Trois_Trinomes.jpg" alt="Commandes"
+                         class="img-fluid d-block mx-auto"></li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/5.2-Trois_trinomes(2).jpg" alt="Commandes"
+                         class="img-fluid d-block mx-auto"></li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="fs-6 fw-bold">Création d'un groupe TrinomeG1</h2>
+            <ul>
+                <li>
+                    Nous avons regardé les dernières lignes du document group contenant tous les groupes existants pour
+                    trouver un
+                    identifiant ligne [<span class="code fst-italic">tail /etc/group</span>]. Ici nous trouvons que
+                    l’identifiant 1005
+                    est disponible. Nous créons un groupe TrinomeG1 [<span class="code fst-italic">sudo groupadd -g 1005 TrinomeG1</span>]
+                    et nous vérifions avec la même commande que précédemment que le groupe a bien été ajouter.
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/6.1-G1.jpg" alt="Commandes"
+                         class="img-fluid d-block mx-auto"></li>
+                <li>
+                    Nous ajoutons au nouveau groupe TrinomeG1 les 3 utilisateurs avec la commande [<span
+                        class="code fst-italic">sudo
+                        usermod -aG TrinomeG1 TrinomeG1_X</span>] puis on vérifie l’ajout en affichant les groupes
+                    auquel ils appartiennent
+                    avec [<span class="code fst-italic">groups TrinomeG1 TrinomeG1_X</span>] X étant remplacé par 1, 2
+                    ou 3.
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/6.2-G1(2).jpg" alt="Commandes"
+                         class="img-fluid d-block mx-auto"></li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="fs-6 fw-bold">Personnalisation de l’invite de commande</h2>
+            <ul>
+                <li>
+                    Nous souhaitons modifier l’invite de commande de sorte à avoir le nom d’utilisateur, suivi de deux
+                    points et du
+                    répertoire courant.
+                </li>
+                <li>
+                    En premier lieu nous avons sauvegarder dans une variable nommée defaut le contenu de la variable
+                    <span class="code fst-italic">PS1</span> (ayant le prompt).
+                </li>
+                <li>
+                    Nous essayons ensuite différent paramètre pour le prompt, et décidons de garder un prompt avec : le
+                    nom d’utilisateur
+                    en vert gras, suivit de deux points et du répertoire courant en blanc.
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/7.1-Styles_prompts.jpg" alt="Commandes"
+                         class="img-fluid d-block mx-auto"></li>
+                <li>
+                    Pour mettre à jour définitivement le prompt pour l’utilisateur courant, il faut aller modifier le
+                    fichier .bashrc
+                    se trouvant dans le répertoire courant de l’utilisateur.
+                    <br>
+                    Nous l’ouvrons avec la commande nano en mode super utilisateur et on met en commentaire les autres
+                    définitions de
+                    PS1.
+                    <br>
+                    Nous ajoutons à la fin du document la ligne export :
+                    <br>
+                    PS1=<span class="fst-italic">'\[\033[01;32m\]\u\[\033[00m\]\[\033[37m\]:\[\033[37m\] \w \$ \[\033[00m\]'</span>
+                    permettant de rendre ma modification permanente. On effectue la commande source ~/.bashrc pour
+                    recharger la
+                    configuration et la rendre effective.
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/7.2-Styles_prompts(2).jpg" alt="Commandes"
+                         class="img-fluid d-block mx-auto"></li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/7.3-Styles_prompts(3).jpg" alt="Commandes"
+                         class="img-fluid d-block mx-auto"></li>
+                <li>J’éteins ma machine et la redémarre pour vérifier que ma modification a bien été prise en compte.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="fs-6 fw-bold">Installation et configuration dun service web (Apache, Ngnix, ...)</h2>
+            <ul>
+                <li>
+                    Nous avons décidé d’utiliser le service Apache. Nous l’installons sur la machine avec la commande
+                    <span class="code
+                        fst-italic">sudo apt install apache2</span>.
+                </li>
+                <li>
+                    Nous avons vérifié sur la machine physique que l’installation c’est bien fait sur ma machine
+                    virtuelle en vérifiant
+                    que la page par défaut d'apache est bien présent à l’IP de ma machine virtuel.
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/8.1-Installation_Apache.jpg"
+                         alt="Installation Apache"
+                         class="img-fluid d-block mx-auto"></li>
+                <li>
+                    Nous avons créé dans le répertoire courant un répertoire nommée <span class="code fst-italic">SAE.1.03_site.fr</span>
+                    avec la commande <span class="code fst-italic">mkdir</span>, et nous le mettons dedans un fichier
+                    <span class="code
+                        fst-italic">index.html</span> pour pouvoir tester son bon fonctionnement à la suite avec la
+                    commande.
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/8.2-Dossier_site.jpg" alt="Commandes"
+                         class="img-fluid d-block mx-auto"></li>
+                <li>
+                    Nous créons un lien symbolique dans le répertoire <span class="code fst-italic">srv</span> vers le
+                    répertoire que
+                    nous venons de crée et vérifions qu’il fonctionne.
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/8.3-Debug.jpg" alt="Debug"
+                         class="img-fluid d-block mx-auto"></li>
+                <li>
+                    Puis nous nous tournons vers le fichier <span class="code fst-italic">apach2.conf</span> se trouvant
+                    dans <span
+                        class="code fst-italic">ect > apache2</span>, et enlevons les commentaires pour laisser l’accès
+                    a apache au
+                    ré3pertoire <span class="code fst-italic">srv</span> dans lequel nous avons mis un lien symbolique
+                    vers notre
+                    répertoire. De plus je supprime <span class="code fst-italic">Indexes</span> des options pour ne pas
+                    permettre à
+                    l’utilisateur du site de voir l’arborescence.
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/8.4-Configuration.jpg" alt="Configuration"
+                         class="img-fluid d-block mx-auto"></li>
+                <li>
+                    Puis nous avons modifié le fichier <span class="code fst-italic">000-default.conf</span> se trouvant
+                    dans <span
+                        class="code fst-italic">ect > apache2 > sites-availables</span> pour y mettre l’accès direct
+                    vers le répertoire
+                    <span class="code fst-italic">srv</span> de ma machine.
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/8.5-Accès.jpg" alt="Configuration de l'accès"
+                         class="img-fluid d-block mx-auto"></li>
+                <li>
+                    Pour avoir accès au site par le lien symbolique, il faut donnée les droits d’accès en exécution aux
+                    autres
+                    utilisateurs avec la commande <span class="code fst-italic">chmod o+x sae</span>.
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/8.6-Droits_execution.jpg"
+                         alt="Modification des droits"
+                         class="img-fluid d-block mx-auto"></li>
+                <li>
+                    Nous effectuons un <span class="code fst-italic">sudo systemctl reload apache2.service</span> pour
+                    mettre à jour et
+                    nous confirmons que le site marche bien après toutes les manipulations effectuées.
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/8.7-Site_Hebergé.jpg" alt="Image du site"
+                         class="img-fluid d-block mx-auto"></li>
+            </ul>
+        </li>
+        <li>
+            <h2 class="fs-6 fw-bold">Configuration de Web Storm pour le déploiement</h2>
+            <ul>
+                <li>
+                    Au sein de WebStorm, nous nous sommes rendus dans <span class="fw-semibold">Tools > Deployment > Configuration >
+                        Add > SFTP</span> pour créer un lien entre mon site en ligne par ma machine et les pages que
+                    nous voulons mettre
+                    en ligne.
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/9.1-Configuration_WebStorm.jpg"
+                         alt="Screenshot configuration WebStorm" class="img-fluid d-block mx-auto"></li>
+                <li>Ensuite nous avons configurer le SSH avec l’adresse IP de ma machine tous en vérifiant que le tout
+                    marche.
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/9.2-SSH.jpg" alt="Screenshot SSH"
+                         class="img-fluid d-block mx-auto"></li>
+                <li>Puis nous avons fait le lien vers le bon répertoire dans ma machine.</li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/9.3-Lien-répertoire.jpg"
+                         alt="Configuration du projet"
+                         class="img-fluid d-block mx-auto"></li>
+                <li>Voici en ligne la dernière version de la page des questions à traitées du compte rendu au format web
+                    en ligne.
+                </li>
+                <li class="list-unstyled">
+                    <img src="../img/système/travail_sur_la_machine/9.4-Test.jpg" alt="Site hébergé"
+                         class="img-fluid d-block mx-auto"></li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+<footer class="py-4">
+    <div class="container">
+        <div class="row text-center text-md-start">
+            <div class="col-md-4 mb-3 mb-md-0">
+                <h3 class="fs-4 mb-0 fw-bold">© 2025 - SAE 1.03 - Tous droits réservés</h3>
+            </div>
+
+            <div class="col-md-4 mb-3 mb-md-0 text-center">
+                <h3 class="fs-4 fw-bold">Navigation</h3>
+                <p>
+                    <a href="index.html" class="link_footer">
+                        Présentation du projet
+                    </a>
+                    <br>
+                    <a href="questions-système.html" class="link_footer">
+                        Questions à traiter
+                    </a>
+                    <br>
+                    <a href="avancée-projet.html" class="link_footer">
+                        Avancée du projet
+                    </a>
+                    <br>
+                    <a href="gantt.html" class="link_footer">
+                        Diagramme de Grantt
+                    </a>
+                    <br>
+                    <a href="vidéo-anglais.html" class="link_footer">
+                        Vidéos d'anglais
+                    </a>
+                    <br>
+                    <a href="compte-rendu.html" class="link_footer">
+                        Compte rendu web
+                    </a>
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <h3 class="fs-4 fw-bold">Contact</h3>
+                <p>
+                    <a href="https://www.google.com/maps/place/IUT+de+Paris+-+Rives+de+Seine+-+Universit%C3%A9+Paris+Cit%C3%A9/@48.8420233,2.267862,17z/data=!3m1!5s0x47e67abe04802425:0xd644f5717cd8a1b9!4m15!1m8!3m7!1s0x47e67aa382cbd2f1:0xee0152d0d9c6df43!2s143+Av.+de+Versailles,+75016+Paris!3b1!8m2!3d48.8420233!4d2.267862!16s%2Fg%2F11c2c57ry6!3m5!1s0x47e67abe049465cd:0x497f02af0718f372!8m2!3d48.8420233!4d2.267862!16s%2Fg%2F12b02lv9g?entry=ttu&g_ep=EgoyMDI1MDEwNi4xIKXMDSoASAFQAw%3D%3D"
+                       class="text-decoration-none link_footer">
+                        <span class="fw-semibold">Adresse</span>
+                    </a>
+                    <br>
+                    <a href="https://www.google.com/maps/place/IUT+de+Paris+-+Rives+de+Seine+-+Universit%C3%A9+Paris+Cit%C3%A9/@48.8420233,2.267862,17z/data=!3m1!5s0x47e67abe04802425:0xd644f5717cd8a1b9!4m15!1m8!3m7!1s0x47e67aa382cbd2f1:0xee0152d0d9c6df43!2s143+Av.+de+Versailles,+75016+Paris!3b1!8m2!3d48.8420233!4d2.267862!16s%2Fg%2F11c2c57ry6!3m5!1s0x47e67abe049465cd:0x497f02af0718f372!8m2!3d48.8420233!4d2.267862!16s%2Fg%2F12b02lv9g?entry=ttu&g_ep=EgoyMDI1MDEwNi4xIKXMDSoASAFQAw%3D%3D"
+                       class="text-decoration-none link_footer">
+                        143 avenue de Versailles 75016 Paris
+                    </a>
+                    <br>
+                    <a href="mailto:scol.iutparis-seine@u-paris.fr" class="text-decoration-none">
+                        <span class="fw-semibold link_footer">E-mail</span>
+                    </a>
+                    <br>
+                    <a href="mailto:scol.iutparis-seine@u-paris.fr" class="text-decoration-none link_footer">
+                        scol.iutparis-seine@u-paris.fr
+                    </a>
+                    <br>
+                    <a href="https://iutparis-seine.u-paris.fr/" class="text-decoration-none link_footer">
+                        <span class="fw-semibold">Site</span>
+                    </a>
+                    <br>
+                    <a href="https://iutparis-seine.u-paris.fr/" class="text-decoration-none link_footer">
+                        IUT de Paris - Rives de Seine
+                    </a>
+                </p>
+                <a href="https://iutparis-seine.u-paris.fr/">
+                    <img src="../img/footer/Mediamodifier-Design.svg" alt="Logo" class="img-fluid">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

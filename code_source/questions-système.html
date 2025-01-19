@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avancée du projet</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="icon" type="image/x-icon" href="../img/icon/icone.ico">
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg nav-colors static-colors">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Compte-rendu</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link rounded-pill active" aria-current="page" href="index.html">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link rounded-pill" href="questions-système.html">Questions Système</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link rounded-pill" href="avancée-projet.html">Avancée du projet</a>
+                </li>
+                <li>
+                    <a class="nav-link rounded-pill" href="gantt.html">Diagramme de Gantt</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link rounded-pill" href="vidéo-anglais.html">Vidéos d'anglais</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link rounded-pill" href="compte-rendu.html">Compte-rendu Web</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="text-center fw-bold display-6">Questions Système</h1>
+    <h2 class="fw-bold pt-3">Définition de virtualisation</h2>
+    <p>La virtualisation est une technologie qui permet de créer des environnements informatiques virtuels
+        (machines virtuelles ou conteneurs) sur une infrastructure matérielle physique, permettant ainsi
+        d'exécuter plusieurs systèmes d'exploitation ou applications sur le même matériel tout en les isolant
+        les uns des autres. Elle maximise l'utilisation des ressources matérielles et offre une flexibilité et
+        une gestion améliorée des environnements informatiques. Il en existe diffèrent types :
+        <br>
+        <span class="fw-semibold">Virtualisation native (Hyperviseur de type 1)</span>
+        <br>
+        L'hyperviseur fonctionne directement sur le matériel physique, sans passer par un système d'exploitation hôte.
+        Cela offre une meilleure performance et un contrôle direct des ressources matérielles.
+        Exemples : VMware ESXi, Microsoft Hyper-V.
+        <br>
+        <span class="text-decoration-underline">Avantages :</span>
+    </p>
+    <ul>
+        <li>Meilleure performance</li>
+        <li>Plus sécurisé et stable</li>
+        <li>Convient aux environnements de production et aux centres de données</li>
+    </ul>
+    <p class="text-decoration-underline">Inconvénients :</p>
+    <ul>
+        <li>Plus conplexe à configurer et à maintenir</li>
+        <li>Moins flexible que les hyperviseurs de type 2 pour les utilisateurs occasionnels</li>
+    </ul>
+    <p>
+        <span class="fw-semibold">Virtualisation hébergée (Hyperviseur de type 2)</span>
+        <br>
+        L'hyperviseur s'exécute au-dessus d'un système d'exploitation hôte, créant une couche de virtualisation
+        supplémentaire. C'est souvent utilisé pour des environnements de test ou des besoins moins gourmands en
+        ressources.
+        <br>
+        Exemples : VMware Workstation, Oracle VirtualBox.
+        <br>
+        <span class="text-decoration-underline">Avantages :</span>
+    </p>
+    <ul>
+        <li>Plus facile à installer et à configurer</li>
+        <li>Plus flexible pour les utilisateurs non professionnels et pour des tests rapides</li>
+    </ul>
+    <p class="text-decoration-underline">Inconvénients :</p>
+    <ul>
+        <li>Moins performant que les hyperviseurs de type 1</li>
+        <li>Dépendance d'un système d'exploitation hôte</li>
+    </ul>
+    <p>
+        <span class="fw-semibold">Virtualisation hybride</span>
+        <br>
+        Ce type combine les caractéristiques des hyperviseurs de type 1 et de type 2, en offrant une certaine
+        flexibilité tout en permettant un contrôle plus poussé des ressources matérielles. Elle est souvent
+        utilisée dans des environnements où une gestion fine est nécessaire tout en permettant une facilité
+        d'utilisation.
+        <br>
+        Exemples : VMware Fusion, Parallels Desktop.
+        <br>
+        <span class="text-decoration-underline">Avantages :</span>
+    </p>
+    <ul>
+        <li>Permet une certaine flexibilité tout en offrant des performances proches de celles des hyperviseurs
+            de type 1
+        </li>
+        <li>Peut s'adapter à des scénarios complexes, comme l'intégration de multiples systèmes d'exploitation
+            ou d'applications
+        </li>
+    </ul>
+    <p class="text-decoration-underline">Inconvénients :</p>
+    <ul>
+        <li>Plus coûteux que les solutions pures (type 1 ou 2)</li>
+        <li>Complexité accrue pour la configuration et la gestion</li>
+    </ul>
+    <p>En conclusion, la virtualisation est une technologie essentielle qui permet d'optimiser l'utilisation des
+        ressources matérielles en créant des environnements virtuels, que ce soit sous forme de machines
+        virtuelles ou de conteneurs. Elle offre flexibilité et isolation des systèmes d'exploitation ou des
+        applications, tout en améliorant la gestion des infrastructures informatiques. Les trois principaux types
+        de virtualisation – native, hébergée et hybride – ont des avantages et inconvénients spécifiques selon
+        les besoins en performance, flexibilité et gestion. Le choix du type de virtualisation dépendra des
+        exigences spécifiques de l'environnement, du niveau de contrôle souhaité, et des ressources disponibles.
+    </p>
+
+    <h2 class="fw-bold pt-3">Différence entre émulateur, simulateur et outil de virtualisation</h2>
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-primary">
+        <tr>
+            <th>Caractéristique</th>
+            <th>Émulateur</th>
+            <th>Simulateur</th>
+            <th>Outils de virtualisation</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Objectifs</td>
+            <td>Recréer un système complet (matériel et logiciel)</td>
+            <td>Reproduire le comportement d'un système sans son matériel exact</td>
+            <td>Créer plusieurs environnements virtuels sur une seule plateforme physique</td>
+        </tr>
+        <tr>
+            <td>Fonctionnement</td>
+            <td>Exécute des programmes conçus pour une autre plateforme</td>
+            <td>Imitation des actions ou résultats d'un système pour des études ou tests</td>
+            <td>Alloue des ressources matérielles à plusieurs machines virtuelles</td>
+        </tr>
+        <tr>
+            <td>Utilisations principales</td>
+            <td>Exécution de logiciels ou jeux conçus pour d'autres plateformes</td>
+            <td>Études, tests, entraînement, ou formation</td>
+            <td>Isolation de systèmes d'exploitation et gestion des ressources matérielles</td>
+        </tr>
+        <tr>
+            <td>Exemples</td>
+            <td>Émulateur de console de jeu (ex : PlayStation sur PC)</td>
+            <td>Simulateur de vol ou de conduite</td>
+            <td>VMware, VirtualBox, Hyper-V</td>
+        </tr>
+        <tr>
+            <td>Répliques du matériel</td>
+            <td>Oui</td>
+            <td>Non</td>
+            <td>Non, mais utilise les ressources matérielles existantes</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2 class="fw-bold pt-3">Type de virtualisation pour les environnements VirtualBox, VMWare Workstation et
+        Stratus</h2>
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-primary">
+        <tr>
+            <th>Logiciel</th>
+            <th>Type de virtualisation</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>VirtualBox</td>
+            <td>Virtualisation hébergée (type 2)</td>
+            <td>Fonctionne sur un système d'exploitation hôte, créant des machines virtuelles.</td>
+        </tr>
+        <tr>
+            <td>VMware Workstation</td>
+            <td>Virtualisation hébergée (type 2)</td>
+            <td>Fonctionne sur un système d'exploitation hôte, avec des fonctionnalités avancées pour les
+                professionnels.
+            </td>
+        </tr>
+        <tr>
+            <td>Stratus</td>
+            <td>Virtualisation native (type 1)</td>
+            <td>Utilisé pour des systèmes nécessitant une très grande fiabilité et des temps d'arrêt minimaux.</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2 class="fw-bold pt-3">Forme/lieu de sauvegarde de la machine virtuelle créée</h2>
+    <p>
+        La machine virtuel SAE1.03 est sauvegardée directement à la racine du disque D:\ d’une des machines
+        physiques avec en premier un fichier SAE1.03.vbox, ce dernier contenant la configuration et les
+        paramètres de ma vm. Cela inclut des informations sur la mémoire allouée, le processeur, les disques
+        durs virtuels, les périphériques, et d'autres configurations spécifiques à la VM. De plus il y a le
+        fichier SAE1.03.vdi qui est l'image de disque de la machine virtuelle, qui représente le disque dur
+        virtuel où toutes les données et le système d'exploitation de la VM sont stockés. Ce fichier contient
+        le système d'exploitation installé, ainsi que tous les fichiers et programmes présents dans la machine
+        virtuelle.
+        <br>
+        Il est possible de faire des sauvegardes de ma machine virtuelle avec des snapshot, et donc de faire
+        une sauvegarde à un instant précis, cependant je ne l’ai pas fait.
+        <br>
+        Voici les différentes allocations d’éléments matériels pour ma VM :
+    </p>
+    <img src="../img/système/questions/4.1_allocation-mémoire.jpg" alt="Mémoire vive allouer" class="img-fluid pb-1">
+    <img src="../img/système/questions/4.2_allocation-mémoire-(2).jpg" alt="CPU allouer" class="img-fluid">
+</div>
+
+<footer class="py-4">
+    <div class="container">
+        <div class="row text-center text-md-start">
+            <div class="col-md-4 mb-3 mb-md-0">
+                <h3 class="fs-4 mb-0 fw-bold">© 2025 - SAE 1.03 - Tous droits réservés</h3>
+            </div>
+
+            <div class="col-md-4 mb-3 mb-md-0 text-center">
+                <h3 class="fs-4 fw-bold">Navigation</h3>
+                <p>
+                    <a href="index.html" class="link_footer">
+                        Présentation du projet
+                    </a>
+                    <br>
+                    <a href="questions-système.html" class="link_footer">
+                        Questions à traiter
+                    </a>
+                    <br>
+                    <a href="avancée-projet.html" class="link_footer">
+                        Avancée du projet
+                    </a>
+                    <br>
+                    <a href="gantt.html" class="link_footer">
+                        Diagramme de Grantt
+                    </a>
+                    <br>
+                    <a href="vidéo-anglais.html" class="link_footer">
+                        Vidéos d'anglais
+                    </a>
+                    <br>
+                    <a href="compte-rendu.html" class="link_footer">
+                        Compte rendu web
+                    </a>
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <h3 class="fs-4 fw-bold">Contact</h3>
+                <p>
+                    <a href="https://www.google.com/maps/place/IUT+de+Paris+-+Rives+de+Seine+-+Universit%C3%A9+Paris+Cit%C3%A9/@48.8420233,2.267862,17z/data=!3m1!5s0x47e67abe04802425:0xd644f5717cd8a1b9!4m15!1m8!3m7!1s0x47e67aa382cbd2f1:0xee0152d0d9c6df43!2s143+Av.+de+Versailles,+75016+Paris!3b1!8m2!3d48.8420233!4d2.267862!16s%2Fg%2F11c2c57ry6!3m5!1s0x47e67abe049465cd:0x497f02af0718f372!8m2!3d48.8420233!4d2.267862!16s%2Fg%2F12b02lv9g?entry=ttu&g_ep=EgoyMDI1MDEwNi4xIKXMDSoASAFQAw%3D%3D"
+                       class="text-decoration-none link_footer">
+                        <span class="fw-semibold">Adresse</span>
+                    </a>
+                    <br>
+                    <a href="https://www.google.com/maps/place/IUT+de+Paris+-+Rives+de+Seine+-+Universit%C3%A9+Paris+Cit%C3%A9/@48.8420233,2.267862,17z/data=!3m1!5s0x47e67abe04802425:0xd644f5717cd8a1b9!4m15!1m8!3m7!1s0x47e67aa382cbd2f1:0xee0152d0d9c6df43!2s143+Av.+de+Versailles,+75016+Paris!3b1!8m2!3d48.8420233!4d2.267862!16s%2Fg%2F11c2c57ry6!3m5!1s0x47e67abe049465cd:0x497f02af0718f372!8m2!3d48.8420233!4d2.267862!16s%2Fg%2F12b02lv9g?entry=ttu&g_ep=EgoyMDI1MDEwNi4xIKXMDSoASAFQAw%3D%3D"
+                       class="text-decoration-none link_footer">
+                        143 avenue de Versailles 75016 Paris
+                    </a>
+                    <br>
+                    <a href="mailto:scol.iutparis-seine@u-paris.fr" class="text-decoration-none">
+                        <span class="fw-semibold link_footer">E-mail</span>
+                    </a>
+                    <br>
+                    <a href="mailto:scol.iutparis-seine@u-paris.fr" class="text-decoration-none link_footer">
+                        scol.iutparis-seine@u-paris.fr
+                    </a>
+                    <br>
+                    <a href="https://iutparis-seine.u-paris.fr/" class="text-decoration-none link_footer">
+                        <span class="fw-semibold">Site</span>
+                    </a>
+                    <br>
+                    <a href="https://iutparis-seine.u-paris.fr/" class="text-decoration-none link_footer">
+                        IUT de Paris - Rives de Seine
+                    </a>
+                </p>
+                <a href="https://iutparis-seine.u-paris.fr/">
+                    <img src="../img/footer/Mediamodifier-Design.svg" alt="Logo" class="img-fluid">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
